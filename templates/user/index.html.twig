@@ -29,8 +29,8 @@
                 <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
 
                 <td>
-                    <a class="knopje_dark" href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a class="knopje_dark" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a class=" btn btn-outline-dark" href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a class=" btn btn-outline-dark" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -41,5 +41,5 @@
         </tbody>
     </table>
 
-    <a class="knopje_info" href="{{ path('user_new') }}">Create new</a>
+    <a class="float-left btn btn-outline-primary" href="{{ path('user_new') }}">Create new</a>
 {% endblock %}

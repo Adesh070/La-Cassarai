@@ -8,53 +8,50 @@
     <table class="table">
         <tbody>
         <tr>
-            <th>Username</th>
+            <th scope="col">Id</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th scope="col">Username</th>
             <td>{{ user.username }}</td>
         </tr>
         <tr>
-            <th>UsernameCanonical</th>
+            <th scope="col">UsernameCanonical</th>
             <td>{{ user.usernameCanonical }}</td>
         </tr>
         <tr>
-            <th>Email</th>
+            <th scope="col">Email</th>
             <td>{{ user.email }}</td>
         </tr>
         <tr>
-            <th>EmailCanonical</th>
+            <th scope="col">EmailCanonical</th>
             <td>{{ user.emailCanonical }}</td>
         </tr>
         <tr>
-            <th>Enabled</th>
+            <th scope="col">Enabled</th>
             <td>{{ user.enabled ? 'Yes' : 'No' }}</td>
         </tr>
         <tr>
-            <th>Salt</th>
+            <th scope="col">Salt</th>
             <td>{{ user.salt }}</td>
         </tr>
         <tr>
-            <th>Password</th>
+            <th scope="col">Password</th>
             <td>{{ user.password }}</td>
         </tr>
         <tr>
-            <th>LastLogin</th>
+            <th scope="col">LastLogin</th>
             <td>{{ user.lastLogin ? user.lastLogin|date('Y-m-d H:i:s') : '' }}</td>
         </tr>
         <tr>
-            <th>ConfirmationToken</th>
+            <th scope="col">ConfirmationToken</th>
             <td>{{ user.confirmationToken }}</td>
         </tr>
         <tr>
-            <th>PasswordRequestedAt</th>
-            <td>{{ user.passwordRequestedAt ? user.passwordRequestedAt|date('Y-m-d H:i:s') : '' }}</td>
-        </tr>
-        <tr>
-            <th>Roles</th>
+            <th scope="col">Roles</th>
             <td>{{ user.roles ? user.roles|join(', ') : '' }}</td>
         </tr>
-        <tr>
-            <th>Id</th>
-            <td>{{ user.id }}</td>
-        </tr>
+
         </tbody>
     </table>
 
@@ -68,8 +65,8 @@
                 <td>{{ book.start ? book.start|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ book.end ? book.end|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
-                    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                    <a href="{{ path('book_show', {'id': book.id}) }}">Show</a>
+                    <a href="{{ path('book_edit', {'id': book.id}) }}">Edit</a>
                 </td>
             </tr>
         {% else %}
@@ -81,9 +78,12 @@
     </table>
     <br>
 
-    <a href="{{ path('user_index') }}">back to list</a> <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+    <a class="float-left btn btn-outline-secondary" href="{{ path('user_index') }}">back to list</a>
+    <a class="float-left btn btn-outline-dark" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
 
 
 
     {{ include('user/_delete_form.html.twig') }}
+
+
 {% endblock %}

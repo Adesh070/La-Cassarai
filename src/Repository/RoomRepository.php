@@ -34,6 +34,20 @@ class RoomRepository extends ServiceEntityRepository
                 ;
         }
     }
+    public function findRoomsReserved($value)
+    {
+        dump($value);
+        halt();
+        return $this->createQueryBuilder('r')
+            ->andWhere('r.exampleField = :val')
+            ->setParameter('checkin', $value['checkin'])
+            ->setParameter('checkout', $value['checkout'])
+            //->orderBy('r.id', 'ASC')
+            //->setMaxResults(10)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
 
 

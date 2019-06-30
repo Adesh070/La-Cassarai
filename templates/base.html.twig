@@ -7,6 +7,14 @@
         {% block stylesheets %}
 
             <style>
+                body{
+                    background-color: whitesmoke;
+                }
+                .float-left{
+                    float: left;
+                    margin-left: 0.1%;
+                }
+
                 .knopje_dark{
                     text-decoration: none;
                     display: inline-block;
@@ -104,15 +112,21 @@
 
     </header>
     <body>
+    <div class="container-fluid">
 
                 {% block body %}
 
 
 
                 {% endblock %}
-
+    </div>
     </body>
 
+
+<footer>
+
+</footer>
+<br>
 
 
 </html>
